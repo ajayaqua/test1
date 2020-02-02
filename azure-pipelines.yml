@@ -1,10 +1,11 @@
-<html>
-  <head>
-    <title>echo</title>
-  </head>
-  <body>
-    <?php
-      echo 10, ", ", 20, ", ", 30;
-    ?>
-  </body>
-</html>
+defaults: &defaults
+   adapter:  postgres
+   host:     localhost
+
+development:
+   database: myapp_development
+   <<: *defaults
+
+test:
+   database: myapp_test
+   <<: *defaults
